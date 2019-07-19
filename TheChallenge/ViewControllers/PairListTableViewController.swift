@@ -23,7 +23,7 @@ class PairListTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 2
+        return PersonController.shared.groups[section].count
     }
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Group \(section + 1)"
@@ -64,7 +64,9 @@ extension PairListTableViewController: UIAlertViewDelegate{
             guard let textInField = alertController.textFields?.first?.text else {return}
             if textInField != "" {
                 PersonController.shared.add(name: textInField)
-                self.tableView.reloadData()
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
             }
         }
         let cancelAction = UIAlertAction(title:"Cancel", style: .destructive)

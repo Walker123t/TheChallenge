@@ -16,12 +16,14 @@ class PersonController{
     //Add
     func add(name: String){
         people.append(name)
+        changeGroups()
         save(people: people)
     }
     //Delete
     func delete(name: String){
         guard let index = people.firstIndex(of: name) else {return}
         people.remove(at: index)
+        changeGroups()
         save(people: people)
     }
     //Randomize
@@ -29,20 +31,18 @@ class PersonController{
         people = people.shuffled()
         save(people: people)
     }
+    //Create Groups
     func changeGroups(){
-        var counter = 1
-        var index = 0
-        var currentGroup: [String] = []
-        
-        while index <= (people.count - 1) {
-            if counter <= 2{
-                counter += 1
-                currentGroup.append(people[index])
-                index += 1
+        var count = 0
+        var currentGroup = 0
+        groups = [[]]
+        while count < people.count{
+            if groups[currentGroup].count > 1{
+                groups.append([])
+                currentGroup += 1
             } else {
-                groups.append(currentGroup)
-                counter = 1
-                currentGroup = []
+                groups[currentGroup].append(people[count])
+                count += 1
             }
         }
     }
