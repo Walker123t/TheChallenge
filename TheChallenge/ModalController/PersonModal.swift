@@ -29,6 +29,7 @@ class PersonController{
     //Randomize
     func randomize(){
         people = people.shuffled()
+        changeGroups()
         save(people: people)
     }
     //Create Groups
