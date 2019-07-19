@@ -20,11 +20,12 @@ class PersonController{
         save(people: people)
     }
     //Delete
-    func delete(name: String){
+    func delete(name: String, completion: (Bool) -> Void){
         guard let index = people.firstIndex(of: name) else {return}
         people.remove(at: index)
         changeGroups()
         save(people: people)
+        completion(true)
     }
     //Randomize
     func randomize(){

@@ -10,6 +10,13 @@ import UIKit
 
 class PairListTableViewController: UITableViewController {
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+            PersonController.shared.changeGroups()
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -37,8 +44,11 @@ class PairListTableViewController: UITableViewController {
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            PersonController.shared.delete(name: PersonController.shared.groups[indexPath.section][indexPath.row])
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            PersonController.shared.delete(name: PersonController.shared.groups[indexPath.section][indexPath.row]) { (_) in
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
         }
     }
     @IBAction func addTapped(_ sender: Any) {
