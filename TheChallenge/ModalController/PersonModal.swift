@@ -36,14 +36,16 @@ class PersonController{
     //Create Groups
     func changeGroups(){
         //getting how far we have gon through the
+        var count = 0
         var currentGroup = 0
         groups = [[]]
-        for count in 0..<people.count{
+        while count < people.count{
             if groups[currentGroup].count > 1{
                 groups.append([])
                 currentGroup += 1
             } else {
                 groups[currentGroup].append(people[count])
+                count += 1
             }
         }
     }
