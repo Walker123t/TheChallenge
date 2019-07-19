@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		043A436922E216110069DD0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043A436822E216110069DD0B /* AppDelegate.swift */; };
 		043A436E22E216110069DD0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 043A436C22E216110069DD0B /* Main.storyboard */; };
-		043A437122E216110069DD0B /* TheChallenge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 043A436F22E216110069DD0B /* TheChallenge.xcdatamodeld */; };
 		043A437322E216130069DD0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 043A437222E216130069DD0B /* Assets.xcassets */; };
 		043A437622E216130069DD0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 043A437422E216130069DD0B /* LaunchScreen.storyboard */; };
-		043A438122E216D50069DD0B /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043A438022E216D50069DD0B /* CoreDataStack.swift */; };
+		043A438722E219750069DD0B /* PersonModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043A438622E219750069DD0B /* PersonModal.swift */; };
+		043A438A22E219E70069DD0B /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043A438922E219E70069DD0B /* Person.swift */; };
+		043A438C22E21D520069DD0B /* PairListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043A438B22E21D520069DD0B /* PairListTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		043A436522E216110069DD0B /* TheChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		043A436822E216110069DD0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		043A436D22E216110069DD0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		043A437022E216110069DD0B /* TheChallenge.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TheChallenge.xcdatamodel; sourceTree = "<group>"; };
 		043A437222E216130069DD0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		043A437522E216130069DD0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		043A437722E216130069DD0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		043A438022E216D50069DD0B /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		043A438622E219750069DD0B /* PersonModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonModal.swift; sourceTree = "<group>"; };
+		043A438922E219E70069DD0B /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		043A438B22E21D520069DD0B /* PairListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairListTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +60,7 @@
 			children = (
 				043A438322E217220069DD0B /* ViewControllers */,
 				043A438522E217310069DD0B /* ModalController */,
-				043A437F22E216B00069DD0B /* CoreData */,
+				043A438822E219AF0069DD0B /* Modal */,
 				043A437E22E2162C0069DD0B /* Resources */,
 			);
 			path = TheChallenge;
@@ -76,19 +78,11 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		043A437F22E216B00069DD0B /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-				043A436F22E216110069DD0B /* TheChallenge.xcdatamodeld */,
-				043A438022E216D50069DD0B /* CoreDataStack.swift */,
-			);
-			path = CoreData;
-			sourceTree = "<group>";
-		};
 		043A438322E217220069DD0B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				043A438422E2172A0069DD0B /* CustomViews */,
+				043A438B22E21D520069DD0B /* PairListTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -103,8 +97,17 @@
 		043A438522E217310069DD0B /* ModalController */ = {
 			isa = PBXGroup;
 			children = (
+				043A438622E219750069DD0B /* PersonModal.swift */,
 			);
 			path = ModalController;
+			sourceTree = "<group>";
+		};
+		043A438822E219AF0069DD0B /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				043A438922E219E70069DD0B /* Person.swift */,
+			);
+			path = Modal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,8 +181,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				043A438122E216D50069DD0B /* CoreDataStack.swift in Sources */,
-				043A437122E216110069DD0B /* TheChallenge.xcdatamodeld in Sources */,
+				043A438A22E219E70069DD0B /* Person.swift in Sources */,
+				043A438C22E21D520069DD0B /* PairListTableViewController.swift in Sources */,
+				043A438722E219750069DD0B /* PersonModal.swift in Sources */,
 				043A436922E216110069DD0B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,7 +332,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UCL5625TDG;
-				INFOPLIST_FILE = TheChallenge/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/TheChallenge/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -346,7 +350,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UCL5625TDG;
-				INFOPLIST_FILE = TheChallenge/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/TheChallenge/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -380,19 +384,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		043A436F22E216110069DD0B /* TheChallenge.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				043A437022E216110069DD0B /* TheChallenge.xcdatamodel */,
-			);
-			currentVersion = 043A437022E216110069DD0B /* TheChallenge.xcdatamodel */;
-			path = TheChallenge.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 043A435D22E216110069DD0B /* Project object */;
 }
