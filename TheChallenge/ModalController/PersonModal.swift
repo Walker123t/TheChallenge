@@ -35,19 +35,19 @@ class PersonController{
     }
     //Create Groups
     func changeGroups(){
-        var count = 0
+        //getting how far we have gon through the
         var currentGroup = 0
         groups = [[]]
-        while count < people.count{
+        for count in 0..<people.count{
             if groups[currentGroup].count > 1{
                 groups.append([])
                 currentGroup += 1
             } else {
                 groups[currentGroup].append(people[count])
-                count += 1
             }
         }
     }
+    //sets the file path we are using
     func fileURL() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         let documentDirectory = paths[0]
@@ -55,7 +55,7 @@ class PersonController{
         let fullURL = documentDirectory.appendingPathComponent(fileName)
         return fullURL
     }
-    
+    //saves to Persistance
     func save(people: [String]){
         let jsonEncoder = JSONEncoder()
         do {
@@ -65,7 +65,7 @@ class PersonController{
             print(error.localizedDescription)
         }
     }
-    
+    //Loads from Persistance
     func loadPeople() -> [String]?{
         let jsonDecoder = JSONDecoder()
         do{

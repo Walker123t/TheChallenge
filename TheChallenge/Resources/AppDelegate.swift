@@ -18,9 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         guard let people = PersonController.shared.loadPeople() else { return false}
         PersonController.shared.people = people
-        print(PersonController.shared.people)
         PersonController.shared.changeGroups()
-        print(PersonController.shared.groups)
         return true
     }
 
